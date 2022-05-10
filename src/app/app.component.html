@@ -1,0 +1,77 @@
+<h1>{{ title }}</h1>
+<h1>{{ name }}</h1>
+<h1>{{ getName() }}</h1>
+<h1>{{ object }}</h1>
+<h1>{{ object.fullName }} {{ object.NickName }}</h1>
+<h1>{{ arr }}</h1>
+<h1>{{ arr[1] }}</h1>
+<app-login></app-login>
+<app-signup></app-signup>
+<button (click)="myevent('hello world')">hello</button>
+<input type="text" #box (keyup)="myevent(box.value)" />
+<br />
+<input type="text" #boxo (keydown)="myevent(boxo.value)" />
+<br />
+<br />
+
+<p>input field live value</p>
+<input type="text" (keyup)="getValue($any($event).target.value)" />
+<h2>{{ displayValue }}</h2>
+
+<p>button click value</p>
+<input type="text" #secondInput />
+<button (click)="getValueSecond(secondInput.value)">Submit</button>
+<h2>{{ SeconddisplayValue }}</h2>
+<br /><br />
+<p>Property binding vs Interpolation</p>
+<br />
+
+<h3>Property binding</h3>
+<input [disabled]="disableValue" type="text" /> <br /><br />
+<h3>Interpolation</h3>
+<input disabled="{{ disableValue }}" type="text" />
+<br /><br />
+<button (click)="makeEnable()">Enabale</button>
+<br /><br />
+<p>NG IF ELSE</p>
+<ng-template [ngIf]="x == 'red'">
+  <h1>Red</h1>
+</ng-template>
+<ng-template [ngIf]="x == 'blue'">
+  <h1>Blue</h1>
+</ng-template>
+<ng-template [ngIf]="x == 'green'">
+  <h1>Green</h1>
+</ng-template>
+<br /><br />
+<p>loop for array</p>
+<h4 *ngFor="let color of colors">
+  {{ color }}
+</h4>
+<br /><br />
+<p>loop for object</p>
+<table border="2">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr *ngFor="let object of objects">
+    <td>{{ object.name }}</td>
+    <td>{{ object.age }}</td>
+  </tr>
+</table>
+<br /><br />
+<p>Angular Form</p>
+<form #simpleForm="ngForm" (ngSubmit)="submitValue(simpleForm.value)">
+  <input type="text" ngModel name="name" placeholder="insert your name" />
+  <br />
+  <br />
+  <input type="text" ngModel name="age" placeholder="insert your age" />
+  <br />
+  <br />
+  <input type="text" ngModel name="adress" placeholder="insert your adress" />
+  <br />
+  <br />
+  <button>Submit</button>
+</form>
+<br /><br />

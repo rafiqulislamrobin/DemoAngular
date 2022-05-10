@@ -1,0 +1,14 @@
+p{
+    font-size: 24px;
+    color:darkblue;
+}
+button{
+    width: 10%;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    background-color: grey;
+     color: white
+}
